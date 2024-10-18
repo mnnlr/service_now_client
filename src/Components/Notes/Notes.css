@@ -1,0 +1,250 @@
+  /* Notes Component Styles */
+
+  .notes-container {
+    width: calc(115% - 250px); /* Adjust to fit container */
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+
+  .tabs {
+    display: flex;
+    background-color: lightgray;
+    height: 50px;
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+
+  .tab {
+    flex-grow: 1;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-bottom: none;
+  }
+
+  .tab.active {
+    background-color: white;
+    border-bottom: 1px solid white;
+    font-weight: bold;
+  }
+
+  .content {
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-top: 20px;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+  }
+
+  .content-lists-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .watch-list, .work-list {
+    font-weight: bold;
+  }
+
+  .work-notes-section {
+    margin-bottom: 20px;
+  }
+
+  .work-notes-input {
+    width: 97%;
+    height: 100px;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: none;
+  }
+
+  .checkbox-group {
+    margin-bottom: 20px;
+  }
+
+  .post-button {
+    padding: 10px 15px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .post-button:hover {
+    background-color: #45a049;
+  }
+
+  .activities {
+    margin-top: 20px;
+  }
+
+  .activity {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  .activity-author {
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  .activity-content {
+    background-color: #f9f9f9;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+  }
+
+  .activity-comment {
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  .activity-details {
+    margin: 0;
+    color: #555;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .lock-icon {
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin: 5px;
+    cursor: pointer;
+  }
+
+  .field-activity-content {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    width: 100%;
+  }
+
+  .field-activity-details {
+    margin: 10px 0;
+    color: #555;
+    font-size: 12px;
+    text-align: left;
+  }
+
+  .field-activity-group {
+    position: relative;
+    left: 20px;
+    top: 10px;
+  }
+
+  /* Related Records and Resolution Information Styles */
+
+.related-records-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 40px;
+  column-gap: 20px;
+}
+
+.related-record-left, .related-record-right {
+  flex: 2;
+  min-width: 300px; 
+}
+
+.related-record-individual {
+  margin-bottom: 15px;
+}
+
+.related-label {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.related-dropdown, .related-input {
+  width: 40%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.related-input1{
+  width: 80%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.related-button {
+  padding: 10px 15px;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.related-button:hover {
+  background-color: #45a049;
+}
+
+.resolution-info {
+
+
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.resolution-left, .resolution-right {
+  flex: 1;
+  min-width: 300px;
+}
+
+.resolution-area {
+  margin-top: 20px;
+}
+
+.resolution-textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+  box-sizing: border-box;
+}
+
+.label-close-notes {
+  font-weight: bold;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.related-record-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}

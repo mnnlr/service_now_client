@@ -1,0 +1,109 @@
+.SDLtablecontainer{
+    
+    max-height: calc(100vh - 80px - 80px); 
+    width: calc(119% - 100px);
+
+    overflow-y: auto; 
+    overflow-x: auto;
+}
+
+.table {
+    width: 130%;
+ 
+    margin: 20px 0;
+    border-collapse: collapse;
+    z-index: 0;
+    /* max-height: calc(100vh - 64px - 60px); 
+    width: calc(130% - 100px);
+    overflow-y: auto;  
+    overflow-x:auto; */
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid rgb(218, 214, 214)
+}
+
+.table th {
+    border-bottom: 3px solid rgb(218, 214, 214);
+    /* background-color: #f4f4f4; */
+    color: #333;
+}
+
+.table tr:nth-child(even) { 
+    background-color: #e2e1e1;
+}
+
+/* .table tr:hover {
+    background-color: #fdfcfc;
+} */
+.checkbox {
+    background-color: #e2e1e1;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.checkbox input[type="checkbox"] {
+    width: 20px; 
+    height: 20px; 
+    transform: scale(1); 
+    cursor: pointer; 
+}
+.tableIcons{
+ 
+    font-size: 2rem;
+    color: #4CAF50;
+   
+
+}
+
+.homepageDropdown {
+    position: relative; 
+    cursor: pointer; 
+    padding: 8px; 
+}
+
+.dropdownContent {
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    z-index: 10; 
+    padding: 8px;
+    width: max-content; 
+}
+
+ .dropdownContent ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+}
+
+ .dropdownContent li {
+    padding: 8px;
+    cursor: pointer; 
+}
+
+ .dropdownContent li:hover {
+    background-color: #f4f4f4; 
+}
+.homepageArrowUp{
+ margin-top: 5px;
+    margin-left: 5px;
+    font-size: 17px;
+
+}
+.dropdownContent.show {
+    display: grid;
+}
+.dropdownContent input {
+    width: 90%;
+    padding: 8px;
+}

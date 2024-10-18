@@ -1,0 +1,41 @@
+.navbar{
+    background-color: gainsboro;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+.navbarIcons{
+    display:flex;
+    background-color: #ffffff;
+    font-size: 2rem ;
+    width: 30px;
+    margin-left: 50px;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.navbarbutton{
+    display:flex;
+    justify-content: center;
+    background-color: #4CAF50;
+    height: 40px;
+    border: none;
+    font: 1em sans-serif;
+    color: white;
+    width: 50px;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+.navberselect{
+    height: 35px;
+    width: 150px;
+    
+}
+.selectnavberinput{
+    height: 29px;
+    width: 150px;
+}

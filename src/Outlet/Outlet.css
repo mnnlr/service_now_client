@@ -1,0 +1,16 @@
+
+.layout {
+    display: flex;
+
+    position: fixed;
+    flex-direction: column;
+
+  }
+  
+  .layoutmain {
+    display: flex;
+ 
+    flex-direction: row;
+  }
+  
+  

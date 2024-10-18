@@ -1,0 +1,89 @@
+.signup-container {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupform-container {
+    width: 18rem;
+    max-width: 27rem;
+    padding: 1rem;
+    background-color: #ecdfcc;
+    border-radius: 0.375rem; 
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; 
+}
+
+.signuptitle {
+    font-size: 1.5rem; 
+    font-weight: bold; 
+}
+
+.signupform {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.signupinput {
+    padding: 0.5rem;
+    border: 2px solid #ccc;
+    border-radius: 0.375rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.signupinput:hover {
+    border-color: #7a1cac; 
+}
+
+.signupbutton {
+    background-color: #7a1cac;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.signupbutton:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.signuploading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signuploader {
+    border: 2px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 2px solid #7a1cac;
+    width: 1rem;
+    height: 1rem;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.signuplink-container {
+    margin-top: 1rem; 
+}
+
+.signuplink-text {
+    color: #7a1cac; 
+}
+
+.signuplink {
+    color: #7a1cac;
+    cursor: pointer;
+    text-decoration: underline;
+}

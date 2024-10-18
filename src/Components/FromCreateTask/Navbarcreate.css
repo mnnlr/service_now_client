@@ -1,0 +1,47 @@
+.createnavbar{
+    
+    background-color: gainsboro;
+    height: 4rem;
+    display: flex;
+   
+    align-items: center;
+    gap: 10px;
+    
+
+}
+.createnavbarIcons{
+    display:flex;
+    background-color: #ffffff;
+    font-size: 2rem ;
+    width: 30px;
+    margin-left: 50px;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+.createnavbartext {
+    flex: 1;
+}
+.createIcons{
+
+    display:flex;
+    justify-content: end;
+    cursor: pointer;
+    font-size: 2rem ;
+    width: 30px; 
+    align-items: center;
+    border: none;
+}
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+    margin-right: 100px;
+}
+
+.button {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
