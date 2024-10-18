@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+# Incident Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+1. [Self-Service](#self-service)
+2. [Incidents](#incidents)
+3. [Watched Incidents](#watched-incidents)
+4. [Service Desk](#service-desk)
+5. [Incident Categories](#incident-categories)
+    - [Incident](#incident)
+    - [Create New](#create-new)
+    - [Assigned to Me](#assigned-to-me)
+    - [Open](#open)
+    - [Open - Unassigned](#open---unassigned)
+    - [Resolved](#resolved)
+    - [All](#all)
+6. [Task SLA](#task-sla)
+7. [Overview](#overview)
+8. [Summary of Key Use Cases](#summary-of-key-use-cases)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Self-Service
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Self-Service portals empower end-users to:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+-   **Log Incidents:** Report issues with software or hardware.
+-   **Raise Service Requests:** Request new software or access to a tool.
+-   **Track Status:** Check the status of existing incidents or requests.
+-   **Search Knowledge Articles:** Find solutions to common problems.
+-   **Access Automated Help:** Use virtual agents for assistance.
 
-### `npm test`
+**Use Case:** End-users can log incidents without contacting the IT help desk, reducing the workload on support teams and speeding up issue resolution.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## Incidents
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+In ServiceNow, **Incidents** refer to unplanned disruptions to services or degradation in service quality. Managing incidents is a core function of IT Service Management (ITSM).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Example:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A user cannot access email or the internet, and an incident is created to restore service.
 
-### `npm run eject`
+### Incident Management Workflow:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Create:** The incident is logged.
+2. **Assign:** The incident is assigned to the relevant team.
+3. **Investigate:** The root cause is identified.
+4. **Resolve:** The service is restored.
+5. **Close:** The incident is marked resolved or closed.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Watched Incidents
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Watched incidents are those that a user is tracking for updates, even if they are not directly assigned.
 
-## Learn More
+**Use Case:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-   A manager or IT lead may watch critical incidents relevant to their department.
+-   Teams relying on another service may track related incidents for updates.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## Service Desk
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The **Service Desk** is the central point of contact between users and the IT department, responsible for:
 
-### Analyzing the Bundle Size
+-   **Receiving, Logging, and Assigning Incidents:** Capturing all incoming issues.
+-   **Resolving Simple Issues:** Directly resolving minor problems or routing complex issues to the correct teams.
+-   **Providing Support:** Assisting users and tracking service requests.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Use Case:** If an employee reports a laptop issue, the service desk logs the incident and assigns it to the hardware support team.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Incident Categories
 
-### Advanced Configuration
+### a) Incident
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This view shows a full list of all incidents, regardless of status. Typically available to administrators and managers for oversight.
 
-### Deployment
+### b) Create New
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Allows users or IT personnel to log a new incident, requiring:
 
-### `npm run build` fails to minify
+-   **Short Description** (e.g., "Unable to access email").
+-   **Category** (e.g., Network, Software).
+-   **Priority** (e.g., High, Medium, Low).
+-   **Assignment Group or Assigned To.**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### c) Assigned to Me
+
+Displays incidents assigned to the logged-in user, who is responsible for resolving them.
+
+**Use Case:** A technician sees assigned incidents and begins working on the most critical one.
+
+### d) Open
+
+Shows all incidents that are not resolved or closed, including those "In Progress" or "On Hold."
+
+**Use Case:** The service desk monitors open incidents to ensure timely resolution and prevent SLA breaches.
+
+### e) Open - Unassigned
+
+Displays incidents that are open but not assigned to any individual or team.
+
+**Use Case:** A service desk manager reviews this list to assign incidents appropriately.
+
+### f) Resolved
+
+Shows incidents that are resolved but not yet closed. After confirming with the user that the issue is resolved, the technician can move the incident to the closed state.
+
+**Use Case:** If a user still has the issue after the resolution, they can re-open the incident, ensuring the problem is properly resolved.
+
+### g) All
+
+Provides access to all incidents, regardless of their status (Open, Closed, In Progress, etc.).
+
+**Use Case:** Administrators or managers can use this view for reporting, auditing, or reviewing incident trends over time.
+
+---
+
+## Task SLA
+
+This section monitors Service Level Agreements (SLAs) for tasks, including incidents. It tracks how well the IT team is performing against agreed timeframes.
+
+**Use Case:** Ensures incidents are resolved within specified SLAs, such as:
+
+-   Priority 1 incidents must be resolved within 4 hours.
+-   Priority 2 incidents must be resolved within 24 hours.
+
+The Task SLA allows users to:
+
+-   View active and breached SLAs.
+-   Monitor performance of teams and individuals.
+-   Escalate issues nearing breach deadlines.
+
+---
+
+## Overview
+
+The Overview section provides a dashboard view of incidents and SLAs. This can include:
+
+-   Total incidents: Open, Resolved, Closed.
+-   Incidents by priority: High, Medium, Low.
+-   SLA Performance: Percentage of incidents resolved within SLA.
+-   Graphs and metrics: Help managers quickly identify problem areas.
+
+**Use Case:** Managers use the Overview Dashboard to:
+
+-   Monitor the workload and backlog of incidents.
+-   Track the performance of their team.
+-   Identify patterns in incidents (e.g., recurring network outages).
+
+---
+
+## Summary of Key Use Cases
+
+-   **Self-Service Portal:** Enables users to log incidents and requests on their own.
+-   **Watched Incidents:** Helps users keep track of critical incidents.
+-   **Service Desk:** Acts as the primary point of contact for users needing IT assistance.
+-   **Task SLA:** Ensures compliance with service timelines, avoiding penalties or breaches.
+-   **Overview Dashboard:** Provides a high-level view of incident management and team performance.
