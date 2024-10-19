@@ -33,8 +33,8 @@ const LoginHook = () => {
 
             toast.success('Logged in successfully');
         } catch (error) {
-            if (error.response) {
-                toast.error(error.response.data);
+            if (error) {
+                toast.error(error);
             } else {
                 toast.error('Error logging in');
             }

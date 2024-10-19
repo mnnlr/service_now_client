@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./Components/Incidents/Home";
 import { CreateTask } from "./Components/FromCreateTask/CreateTask";
 import { OutLet } from "./Outlet/OutLet";
@@ -15,33 +15,32 @@ import { AuthRoutes } from "./Components/auth/AuthRoutes";
 
 
 function App() {
-  // const { authUser } = useAuthContext()
   return (
     <>
       <BrowserRouter>
-
-        <Routes>
-          <Route path="/" element={
-            <AuthRoutes>
-              <OutLet />
-            </AuthRoutes>
-          }>
-            <Route index element={<Home />} />
-            <Route path="/SLA" element={<SLAsection />} />
-            <Route path="/incidents" element={<IncidentPage />} />
-            <Route path="/Assign_to_me" element={<AssigneeMePage />} />
-            <Route path="/unassigneed_task" element={<UnassigneedTask />} />
-            <Route path="/resolved_task" element={<ResolvedTask />} />
-            <Route path="/dashboard" element={<DashBoard />} />
-            <Route path="/createtask" element={<CreateTask />} />
-          </Route>
-          <Route path="/signin" element={<Signin />} />
-          <Route path="/signup" element={<Signup />} />
-        </Routes>
-
+        <AuthProvider>
+          <Routes>
+            <Route path="/" element={
+              <AuthRoutes>
+                <OutLet />
+              </AuthRoutes>
+            }>
+              <Route index element={<Home />} />
+              <Route path="/SLA" element={<SLAsection />} />
+              <Route path="/incidents" element={<IncidentPage />} />
+              <Route path="/Assign_to_me" element={<AssigneeMePage />} />
+              <Route path="/unassigneed_task" element={<UnassigneedTask />} />
+              <Route path="/resolved_task" element={<ResolvedTask />} />
+              <Route path="/dashboard" element={<DashBoard />} />
+              <Route path="/createtask" element={<CreateTask />} />
+            </Route>
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/signup" element={<Signup />} />
+          </Routes>
+        </AuthProvider>
       </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
