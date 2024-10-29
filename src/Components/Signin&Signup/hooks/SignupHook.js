@@ -2,11 +2,13 @@ import axios from 'axios';
 import { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useAuthContext } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const SignupHook = () => {
 
     const [loading, setLoading] = useState(false);
     const { setAuthUser } = useAuthContext();
+    const navigate = useNavigate();
 
     const Signup = async (formData) => {
         let error = null; // To store the error message
@@ -31,15 +33,16 @@ const SignupHook = () => {
             if (!res.success) {
                 error = res.error;
                 toast.error(error);
+                console.log("Error in signing up Response:" + res.error);
                 return { success: false, error };
             }
-            else {
-                toast.success('Registered successfully');
-                localStorage.setItem('user', JSON.stringify(res.user_data));
-                localStorage.setItem('access_token', JSON.stringify(res.access_token));
-                setAuthUser(res.user); // Updating auth context
-                return { success: true }; // Return success if no error
-            }
+
+            toast.success('Registered successfully');
+            localStorage.setItem('user', JSON.stringify(res.user_data));
+            localStorage.setItem('access_token', JSON.stringify(res.access_token));
+            setAuthUser(res.user); // Updating auth context
+            navigate('/signin');
+            return { success: true }; // Return success if no error
         } catch (err) {
             console.log(err)
             error = err.response ? (err.response.data || 'Error signing up') : 'Network error or server is not reachable';

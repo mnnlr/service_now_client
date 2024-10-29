@@ -15,14 +15,7 @@ const Signup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const result = await Signup(formData);
-
-        if (!result.success) {
-            setError(result.error); // Set the error message received from the hook
-        } else {
-            alert('Registered successfully');
-            navigate('/');
-        }
+        await Signup(formData);
     };
 
     return (

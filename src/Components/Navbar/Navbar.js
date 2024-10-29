@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 // import './Navbar.css'
 import { IoSearchSharp } from "react-icons/io5";
 import { TiMessages } from "react-icons/ti";
-import { MdAccountCircle, MdOutlineHelpOutline } from "react-icons/md";
+import { MdAccountCircle, MdOutlineHelpOutline, MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from "react-icons/md";
 import { FiSettings } from "react-icons/fi";
 import LogoutHook from '../Signin&Signup/hooks/LogoutHook';
 import { Link } from 'react-router-dom'
 import { useAuthContext } from '../Signin&Signup/context/AuthContext';
 import { BsChevronDown } from "react-icons/bs";
 import Cookie from 'js-cookie';
+import ClickOutsideWrapper from '../ClickOutsideWrapper';
 
 
 
@@ -48,19 +49,22 @@ const Navbar = () => {
         <h3 className='text-2xl font-bold'>MNNLR <span className='text-[#88C273] text-lg font-serif'>Service Management</span></h3>
       </div>
       {/* working on this */}
+
       <div className='flex flex-row items-center justify-center'>
-        <span onClick={toggleOpenOptions} className='flex flex-row items-center mr-3 px-2 py-1 bg-slate-200 rounded-md shadow-sm hover:shadow-md hover:bg-gray-100 transition ease-in-out duration-150 cursor-pointer space-x-3'>
-          <MdAccountCircle className='' size={35} />
-          {authUser ? upperCaseFirstLetter(authUser?.role) || upperCaseFirstLetter(authUser?.name) : "Un-None User"}< BsChevronDown />
-        </span>
-        {openOptions && (
-          <div className='absolute top-16  flex flex-col px-1 py-2 mr-4 bg-slate-100 rounded-md shadow-3xl z-10'>
-            <Link className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/logout">Profile</Link>
-            <Link className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/logout">Impersonate User</Link>
-            <Link className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/logout">Elevate Role</Link>
-            <Link onClick={handleLogout} className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/signin">Logout</Link>
-          </div>
-        )}
+        <ClickOutsideWrapper onClickOutside={() => setOpenOptions(false)}>
+          <span onClick={toggleOpenOptions} className='flex flex-row items-center mr-3 px-2 py-1 bg-slate-200 rounded-md shadow-sm hover:shadow-md hover:bg-gray-100 transition ease-in-out duration-150 cursor-pointer space-x-3'>
+            {authUser?.avatar || <MdAccountCircle className='' size={35} />}
+            {authUser ? upperCaseFirstLetter(authUser?.role) || upperCaseFirstLetter(authUser?.name) : "Un-None User"}{openOptions ? <MdOutlineKeyboardArrowUp /> : <MdOutlineKeyboardArrowDown />}
+          </span>
+          {openOptions && (
+            <div className='absolute top-16 flex flex-col px-1 py-2 mr-4 bg-slate-100 rounded-md shadow-3xl z-10'>
+              <Link className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/user-profile">Profile</Link>
+              <Link className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/logout">Impersonate User</Link>
+              {authUser?.role === "admin" || authUser?.role === "hr" && <Link className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/logout">Elevate Role</Link>}
+              <Link onClick={handleLogout} className='px-3 py-2 hover:bg-gray-200 rounded-md duration-300 ease-in-out' to="/signin">Logout</Link>
+            </div>
+          )}
+        </ClickOutsideWrapper>
 
 
         <div className='flex flex-row items-center justify-center space-x-3'>

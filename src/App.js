@@ -12,6 +12,7 @@ import ResolvedTask from "./Components/Incidents/ResolvedTask";
 import DashBoard from "./Components/DashBoard/DashBoard";
 import { AuthProvider } from "./Components/Signin&Signup/context/AuthContext";
 import { AuthRoutes } from "./Components/auth/AuthRoutes";
+import { ProfilePage } from "./Components/profile/ProfilePage";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route path="/resolved_task" element={<ResolvedTask />} />
               <Route path="/dashboard" element={<DashBoard />} />
               <Route path="/createtask" element={<CreateTask />} />
+              <Route path="/user-profile" element={<ProfilePage user={JSON.parse(localStorage.getItem('user'))} />} />
             </Route>
             <Route path="/signin" element={<Signin />} />
             <Route path="/signup" element={<Signup />} />

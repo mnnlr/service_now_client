@@ -16,15 +16,7 @@ const Signin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const result = await Login(formData);
-
-    if (result?.success) {
-      alert('Logged in successfully');
-      navigate('/');
-    } else {
-      alert("Email or password is incorrect");
-      setError(result?.error);
-    }
+    await Login(formData);
   };
 
   return (
