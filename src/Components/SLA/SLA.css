@@ -1,167 +1,157 @@
-.SLA-section{
-    /* width: 100%;
-    margin: 0 auto;
-    font-family: Arial, sans-serif; */
-    width: calc(115% - 250px); /* Adjust to fit container */
+/* General container */
+.contents {
+    padding: 1rem;
     font-family: Arial, sans-serif;
-    padding: 20px;
-    box-sizing: border-box;
-    margin-top: 20px;
 }
 
-.side-name{
-    position: absolute;
-    left: 10px;
-}
-
-.SLA-tabs-container{
-    position: absolute;
-    top: 1700px;
-    left: 0px;
-}
-
-.SLA-tabs{
+/* Task-SLA-bar styling */
+.Task-SLA-bar {
     display: flex;
-      /* border: 1px solid grey; */
-      background-color: lightgray;
-      height: 50px;
-      /* width: 100%; */
-      /* position: absolute;
-      top: 0px; */
-    
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
 }
 
-.tab {
-    flex-grow: 1;
-    padding: 10px 20px;
-    text-align: center;
-    cursor: pointer;
-    background-color: #f2f2f2;
-    border: 1px solid #ddd;
-    border-bottom: none;
-  }
+.bar-individual {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1rem;
+}
 
-  .tab.active {
-    background-color: white;
-    border-bottom: 1px solid white;
+.SLA-defination {
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Filter section styling */
+.filter-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-weight: bold;
-  }
+    color: #333;
+    margin-bottom: 1rem;
+}
 
-  .contents {
-    /* width: 60%;
-    margin: 50px auto;
-    padding: 20px; */
-    /* background-color: red; */
-    /* border: 1px solid #ddd; */
-    /* border-radius: 4px; */
-    position: absolute;
-    top: 1750px;
+/* SLA headings styling */
+.SLA-headings {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    /* Adjust columns to match data */
+    font-weight: bold;
+    color: #555;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+    background-color: #f9f9f9;
+}
+
+.headings-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    justify-content: center;
+}
+
+/* Divider line */
+.headings-line hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+/* SLA record styling */
+.SLA-record-resolution,
+.SLA-record-response {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.record-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+/* Progress bar styling */
+.progress-bar-parent {
     width: 100%;
-    left: 0px;
-  }
-  
-  .Task-SLA-bar{
-    background-color: rgb(147, 181, 192);
-    /* width: 100ch; */
-    display: flex;
-    height: 50px;
-   align-items: center;
-   /* position:  absolute;
-   top: 0px; */
-   
-  }
-
-.bar-individual{
-    padding-left: 15px;
-    cursor: pointer;
+    height: 8px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.SLA-defination{
-    height: 30px;
-    width: 200px;
-    border: lightgray solid 1px;
-    cursor: pointer;
-}
-
-.filter-section{
-    display: flex;
-    position: relative;
-   top: 10px;
-}
-
-.SLA-headings{
-    /* display: flex;
-    flex-direction: row; */
-    /* text-align: center; */
-    /* align-items: center; */
-    /* display: flex; */
-    position: relative;
-    top: 10px;
-    font-weight: 600;
-    /* display: flex;
-    align-items: center; */
-    /* background-color: red;
-    height: 50px; */
-}
-
-.headings-item{
-    padding: 7px;
-    align-items: end;
-    /* padding-bottom: 15px; */
-}
-
-.headings-line{
-
-    color: red;
-    position: relative;
-    top: 10px;
-}
-
-.SLA-record-resolution{
-    position: relative;
-    top: 10px;
-    /* background-color: chartreuse; */
-    height: 70px;
-    display: flex;
-    align-items: center;
-
-}
-
-.record-item{
-    padding: 21px;
-   
-}
-
-.SLA-record-response{
-    position: relative;
-    top: 10px;
-    background-color: rgb(224, 233, 215);
-    height: 70px;
-    display: flex;
-    align-items: center;
-}
-
-.progress-bar-parent{
-    height: 10px;
-   width: 250px;
-   background-color: whitesmoke;
-   border-radius: 12px;
-   position: relative;
-   /* margin: 1rem; */
-}
-
-.progress-resolution-child{
-    height: 100%;
+.progress-resolution-child {
     width: 50%;
-    background-color: green;
-    border-radius: 12px;
-    text-align: left
+    /* Set according to actual percentage */
+    height: 100%;
+    background-color: #4caf50;
 }
 
-.progress-response-child{
-    height: 100%;
+.progress-response-child {
     width: 33%;
-    background-color: green;
-    border-radius: 12px;
-    text-align: left
+    /* Set according to actual percentage */
+    height: 100%;
+    background-color: #2196f3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .Task-SLA-bar,
+    .SLA-headings,
+    .SLA-record-resolution,
+    .SLA-record-response {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .bar-individual,
+    .record-item {
+        width: 100%;
+        gap: 8px;
+        margin-bottom: 5px;
+    }
+}
+
+
+/* Main table-like structure */
+.table-container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* SLA record styling as table rows */
+.SLA-record-resolution,
+.SLA-record-response {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    /* Match number of columns */
+    padding: 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: center;
+    background-color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    .SLA-headings,
+    .SLA-record-resolution,
+    .SLA-record-response {
+        grid-template-columns: 1fr;
+        /* Stack items vertically on small screens */
+    }
 }
